@@ -2,9 +2,11 @@
 
 Implement sim.py to simulate logic. The resulting script will take two text files as input (see example input files input.txt and circuit.txt below). It must implement operations supporting the Boolean functions (inv, and2, & or2)as defined below:
 
+```
 output = inv(input)
 output = and2(input1, input2)
 output = or2(input1, input2)
+ ```
  
 | Inputs     |            | Output   |         |
 | ---------- | ---------- | -------- | ------- |
