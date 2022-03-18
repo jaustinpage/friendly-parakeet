@@ -1,10 +1,83 @@
 # friendly-parakeet
+---- Programming Problem Specification ---
 
-Add a short description here!
+ 
 
-## Description
+ 
 
-A longer description of your project goes here...
+Implement sim.py to simulate logic. The resulting script will take two text files as input (see example input files input.txt and circuit.txt below). It must implement operations supporting the Boolean functions (inv, and2, & or2)as defined below:
+
+output = inv(input)
+output = and2(input1, input2)
+output = or2(input1, input2)
+ 
+| Inputs     |            | Output   |         |
+| ---------- | ---------- | -------- | ------- |
+| **Input**  |            | **Inv**  |         |
+| 0          |            | 1        |         |
+| 1          |            | 0        |         |
+| **input1** | **input2** | **and2** | **or2** |
+| 0          | 0          | 0        | 0       |
+| 0          | 1          | 0        | 1       |
+| 1          | 0          | 0        | 1       |
+| 1          | 1          | 1        | 1       |
+
+input.txt
+```
+in1 = [0, 1, 1]
+in2 = [1, 0, 1]
+in3 = [1, 1, 1] 
+```
+circuit.txt
+```
+out1 = and2(out4, in2)
+out2 = or2(out1, out3)
+out3 = and2(in1, in3)
+out4 = inv(in1)
+```
+> sim.py input.txt circuit.txt
+```
+out1 = [1, 0, 0]
+out2 = [0, 1, 1]
+out3 = [1, 1, 1]
+out4 = [1, 0, 0]
+```
+
+Optional Bonus: Only do this if you're interested
+    Add support for 'X' construct, where 'X' means that the state is unknown or simultaneously driven to different values. This construct adds the following combinations to the table above.
+ 
+| Inputs     |            | Output   |         |
+| ---------- | ---------- | -------- | ------- |
+| **Input**  |            | **Inv**  |         |
+| X          |            | X        |         |
+| **input1** | **input2** | **and2** | **or2** |
+| 0          | X          | 0        | X       |
+| X          | 0          | 0        | X       |
+| 1          | 0          | 0        | 1       |
+| X          | 1          | X        | 1       |
+
+input.txt
+```
+in1 = [ 0 ,  1, 'X']
+in2 = ['X', 'X', 1 ]
+in3 = ['X',  1,  1 ]
+```
+
+circuit.txt
+```
+out1 = and2(out4, in2)
+out2 = or2(out1, out3)
+out3 = and2(in1, in3)
+out4 = inv(in1)
+```
+
+```
+> sim.py input.txt circuit.txt
+out1  ['X', 0, 'X']
+out2  [ 0 , 1, 'X']
+out3  ['X', 1, 'X']
+out4  [ 1 , 0, 'X']
+```
 
 ## Prerequisites
 
