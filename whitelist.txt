@@ -16,6 +16,7 @@ expr
 filepath
 func
 iconfig
+inv
 isort
 IWUSR
 logformat
@@ -30,6 +31,7 @@ pathlib
 pep3101
 posix
 POSIX
+prog
 pyscaffold
 pyscaffoldext
 readouterr
@@ -37,10 +39,12 @@ rmpath
 scm
 shlex
 src
+strtobool
 tmp
 tmpfolder
 tox
 uncomment
 uniqstr
+util
 venv
 ver

@@ -1,13 +1,15 @@
 # friendly-parakeet
 
-Implement sim.py to simulate logic. The resulting script will take two text files as input (see example input files input.txt and circuit.txt below). It must implement operations supporting the Boolean functions (inv, and2, & or2)as defined below:
+Implement sim.py to simulate logic. The resulting script will take two text files as
+input (see example input files input.txt and circuit.txt below). It must implement
+operations supporting the Boolean functions (inv, and2, & or2)as defined below:
 
 ```
 output = inv(input)
 output = and2(input1, input2)
 output = or2(input1, input2)
- ```
- 
+```
+
 | Inputs     |            | Output   |         |
 | ---------- | ---------- | -------- | ------- |
 | **Input**  |            | **Inv**  |         |
@@ -20,19 +22,24 @@ output = or2(input1, input2)
 | 1          | 1          | 1        | 1       |
 
 input.txt
+
 ```
 in1 = [0, 1, 1]
 in2 = [1, 0, 1]
 in3 = [1, 1, 1] 
 ```
+
 circuit.txt
+
 ```
 out1 = and2(out4, in2)
 out2 = or2(out1, out3)
 out3 = and2(in1, in3)
 out4 = inv(in1)
 ```
+
 > sim.py input.txt circuit.txt
+
 ```
 out1 = [1, 0, 0]
 out2 = [0, 1, 1]
@@ -40,9 +47,10 @@ out3 = [1, 1, 1]
 out4 = [1, 0, 0]
 ```
 
-Optional Bonus: Only do this if you're interested
-    Add support for 'X' construct, where 'X' means that the state is unknown or simultaneously driven to different values. This construct adds the following combinations to the table above.
- 
+Optional Bonus: Only do this if you're interested Add support for 'X' construct, where
+'X' means that the state is unknown or simultaneously driven to different values. This
+construct adds the following combinations to the table above.
+
 | Inputs     |            | Output   |         |
 | ---------- | ---------- | -------- | ------- |
 | **Input**  |            | **Inv**  |         |
@@ -54,6 +62,7 @@ Optional Bonus: Only do this if you're interested
 | X          | 1          | X        | 1       |
 
 input.txt
+
 ```
 in1 = [ 0 ,  1, 'X']
 in2 = ['X', 'X', 1 ]
@@ -61,6 +70,7 @@ in3 = ['X',  1,  1 ]
 ```
 
 circuit.txt
+
 ```
 out1 = and2(out4, in2)
 out2 = or2(out1, out3)
@@ -192,7 +202,6 @@ At this point, I recommend using PyCharm to continue development.
   time it is run.
 
 ##Repo/Library Management Tasks
-
 
 ### How to add a 3rd party (PyPi) runtime dependency
 
