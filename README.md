@@ -21,7 +21,7 @@ output = or2(input1, input2)
 | 1          | 0          | 0        | 1       |
 | 1          | 1          | 1        | 1       |
 
-input.txt
+> input.txt
 
 ```
 in1 = [0, 1, 1]
@@ -29,7 +29,7 @@ in2 = [1, 0, 1]
 in3 = [1, 1, 1] 
 ```
 
-circuit.txt
+> circuit.txt
 
 ```
 out1 = and2(out4, in2)
@@ -42,8 +42,8 @@ out4 = inv(in1)
 
 ```
 out1 = [1, 0, 0]
-out2 = [0, 1, 1]
-out3 = [1, 1, 1]
+out2 = [1, 1, 1]
+out3 = [0, 1, 1]
 out4 = [1, 0, 0]
 ```
 
@@ -61,7 +61,7 @@ construct adds the following combinations to the table above.
 | 1          | 0          | 0        | 1       |
 | X          | 1          | X        | 1       |
 
-input.txt
+> input.txt
 
 ```
 in1 = [ 0 ,  1, 'X']
@@ -69,7 +69,7 @@ in2 = ['X', 'X', 1 ]
 in3 = ['X',  1,  1 ]
 ```
 
-circuit.txt
+> circuit.txt
 
 ```
 out1 = and2(out4, in2)
@@ -78,11 +78,12 @@ out3 = and2(in1, in3)
 out4 = inv(in1)
 ```
 
-```
 > sim.py input.txt circuit.txt
+> 
+```
 out1  ['X', 0, 'X']
-out2  [ 0 , 1, 'X']
-out3  ['X', 1, 'X']
+out2  ['X', 1, 'X']
+out3  [ 0 , 1, 'X']
 out4  [ 1 , 0, 'X']
 ```
 
@@ -92,7 +93,7 @@ out4  [ 1 , 0, 'X']
 - up to date pip
   ```shell
   # this needs to be done outside of a virtualenv, not inside
-  pip install --upgrade pip
+  python -m pip install --upgrade pip
   ```
 
 ## Install
@@ -100,8 +101,8 @@ out4  [ 1 , 0, 'X']
 To Install and use this library:
 
 ```shell
-pip install --upgrade pip
-pip install git+ssh://github.com/jaustinpage/friendly-parakeet#egg=friendly-parakeet
+python -m pip install --upgrade pip
+python -m pip install git+https://github.com/jaustinpage/friendly-parakeet#egg=friendly_parakeet
 ```
 
 Then, in your python script, you can use the library.
@@ -113,6 +114,11 @@ friendly-parakeet.<do something awesome>()
 
 If you are using this library from another python library, dont forget to update your
 `setup.cfg` \[options\] install-requires section!
+
+If you want to try the CLI, create 'circuit.txt' and 'input.txt' and then run:
+```python
+python -m friendly_parakeet.__init__ input.txt circuit.txt
+```
 
 ## Development Setup
 
